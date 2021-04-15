@@ -38,3 +38,21 @@ router.patch('/articles', function(req, res){
         res.status(422).send('Article update failed.');
     });
 });
+
+router.delete('/articles', function(req, res){
+    Article.findById(req.params.id, function(err, article){
+        if(!article){
+            res.status(404).send('Article not found');
+        }else{
+            Article.findByIdAndRemove(req.params.id)
+            .then(function(){
+                res.status(200).json('Article deleted.')
+            })
+            .catch(function(err){
+                res.status(400).send('Article delete failed.');
+            });
+        }
+    });
+});
+
+module.exports = router;
