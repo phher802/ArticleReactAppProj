@@ -18,3 +18,13 @@ router.get('/articles/:id', function(req, res){
     });
 });
 
+router.post('/articles', function(req, res){
+    let article = new Article(req.body);
+    article.save()
+    .then(article => {
+        res.send(article);
+    })
+    .catch(function(err){
+        res.status(422).send('Article add failed');
+    });
+});
