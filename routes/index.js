@@ -25,6 +25,16 @@ router.post('/articles', function(req, res){
         res.send(article);
     })
     .catch(function(err){
-        res.status(422).send('Article add failed');
+        res.status(422).send('Article add failed.');
+    });
+});
+
+router.patch('/articles', function(req, res){
+    Article.findByIdAndUpdate(req.params.id, req.body)
+    .then(function(){
+        res.json('Article updated');
+    })
+    .catch(function(err){
+        res.status(422).send('Article update failed.');
     });
 });
