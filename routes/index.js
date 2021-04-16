@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Article = require('../models/article');
 
-router.get('/article', function(reg, res){
+router.get('/articles', function(reg, res){
     Article.find(function(err, articles){
         res.json(articles);
     });

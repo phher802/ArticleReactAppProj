@@ -11,7 +11,7 @@ const articleSchema = new mongoose.Schema({
         require: [true, 'Title is required']
     }, 
     content: {
-        type: string,
+        type: String,
         required: [true, "content can't be blank"]
     }
 });
