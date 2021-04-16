@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const router = require('./routes/index');
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 const MONGODB_URI = 'mongodb://localhost:27017/articlesDB';
 
 //app.use(cors());
