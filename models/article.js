@@ -1,10 +1,14 @@
 const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({
+    language: {
+        type: String,
+        require: [true, 'Specify a programming language']
+
+    },
     category: {
         type: String,
-        enum: ['Python', 'JavaScript', 'C#', 'Ruby', 'Java'],
-        require: [true, 'category is required']
+        require: [true, 'Category is required']
     },
     title: {
         type: String,
@@ -12,7 +16,7 @@ const articleSchema = new mongoose.Schema({
     }, 
     content: {
         type: String,
-        required: [true, "content can't be blank"]
+        required: [true, "Content can't be blank"]
     }
 });
 
