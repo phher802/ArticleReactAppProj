@@ -6,7 +6,6 @@ const router = require('./routes/index');
 const app = express();
 const PORT = 3000;
 const MONGODB_URI = 'mongodb://localhost:27017/articlesDB';
-const router = require('./routes/index');
 
 //app.use(cors());
 app.use(express.urlencoded({extended: true}));
